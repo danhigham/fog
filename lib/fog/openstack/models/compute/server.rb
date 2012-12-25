@@ -102,6 +102,8 @@ module Fog
           elsif addresses['internet']
             #assume no public IP means private cloud
             return addresses['internet'].first
+          else 
+            return addresses['private'].last # try the last private instead
           end
         end
 
